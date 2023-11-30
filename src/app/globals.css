@@ -19,7 +19,7 @@ button {
   @apply border-0 rounded-full px-6 py-2;
 }
 
-.secondary {
+.btn_secondary {
   @apply border border-gray-500;
 }
 

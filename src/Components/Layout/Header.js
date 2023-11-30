@@ -20,7 +20,7 @@ export default function Header() {
           Login
         </Link>
         <Link
-          className="bg-primary text-white rounded-full px-8 py-2"
+          className="border border-primary bg-primary text-white rounded-full px-8 py-2"
           href={"/register"}
         >
           Registre-se

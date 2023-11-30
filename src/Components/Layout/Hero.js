@@ -17,7 +17,7 @@ export default function Hero() {
             Peça agora
             <Right />
           </button>
-          <button className="flex gap-2 items-center justify-center py-2 font-semibold text-gray-600 secondary">
+          <button className="flex gap-2 items-center justify-center py-2 font-semibold text-gray-600 btn_secondary">
             Saiba mais <Right />
           </button>
         </div>
