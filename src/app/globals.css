@@ -16,7 +16,11 @@ input[type="email"] {
 
 button {
   @apply block w-full text-gray-700 font-semibold;
-  @apply border border-gray-500 rounded-full px-6 py-2;
+  @apply border-0 rounded-full px-6 py-2;
+}
+
+.secondary {
+  @apply border border-gray-500;
 }
 
 button[type="submit"],

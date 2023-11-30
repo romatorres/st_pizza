@@ -12,8 +12,13 @@ export default function Header() {
         <Link href={""}>About</Link>
         <Link href={""}>Contact</Link>
       </nav>
-      <nav className="flex gap-4 items-center text-gray-500 font-semibold">
-        <Link href={"/login"}>Login</Link>
+      <nav className="flex gap-4 items-center font-semibold">
+        <Link
+          className="border border-gray-500 text-gray-500 rounded-full px-14 py-2"
+          href={"/login"}
+        >
+          Login
+        </Link>
         <Link
           className="bg-primary text-white rounded-full px-8 py-2"
           href={"/register"}

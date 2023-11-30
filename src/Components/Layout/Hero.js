@@ -13,11 +13,11 @@ export default function Hero() {
           vida simples mas deliciosa!
         </p>
         <div className="flex gap-4 text-sm">
-          <button className="flex gap-2 items-center bg-primary uppercase font-semibold px-4 py-2 rounded-full text-white">
+          <button className="flex gap-2 items-center justify-center bg-primary font-semibold px-4 py-2 rounded-full text-white">
             Peça agora
             <Right />
           </button>
-          <button className="flex gap-2 py-2 font-semibold text-gray-600">
+          <button className="flex gap-2 items-center justify-center py-2 font-semibold text-gray-600 secondary">
             Saiba mais <Right />
           </button>
         </div>
