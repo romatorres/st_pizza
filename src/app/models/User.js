@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import { model, models, Schema } from "mongoose";
 
 const UserSchema = new Schema(
   {
@@ -6,9 +6,10 @@ const UserSchema = new Schema(
     password: {
       type: String,
       required: true,
-      validate: (pass) => {
-        if (!pass?.leght || pass.leght < 5) {
+      validate: pass => {
+        if (!pass?.length || pass.length < 5) {
           new Error("A senha tem que ter no minimo 5 caracteres");
+          return false
         }
       },
     },
@@ -16,4 +17,4 @@ const UserSchema = new Schema(
   { timestamps: true }
 );
 
-export const User = models?.User || model("User", UserSchema);
+export const User = models?.User || model('User', UserSchema);
