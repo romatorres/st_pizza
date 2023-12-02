@@ -13,18 +13,20 @@ export default function RegisterPage() {
   async function handleFormSubmit(ev) {
     ev.preventDefault();
     setCreatingUser(true);
-    try {
-      await fetch("/api/register", {
+    setError(false);
+    setUserCreated(false);
+      const response = await fetch("/api/register", {
         method: "POST",
         body: JSON.stringify({ email, password }),
         headers: { "Content-Type": "appliclation/json" },
       });
-      setCreatingUser(false);
-      setUserCreated(true);
-    } catch (e) {
-      setError(true);
+      if(response.ok){
+        setUserCreated(true);
+      } else{
+        setError(true);  
+        setCreatingUser(false);
+      }      
     }
-  }
 
   return (
     <section className="mt-8">
@@ -37,7 +39,7 @@ export default function RegisterPage() {
           </Link>
         </div>
       )}
-      {setError && (
+      {error && (
         <div className="my-4 text-center text-gray-700">
           Algo deu errado, por favor, tente novamente!!
         </div>
