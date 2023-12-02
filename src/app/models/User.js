@@ -6,10 +6,10 @@ const UserSchema = new Schema(
     password: {
       type: String,
       required: true,
-      validate: pass => {
+      validate: (pass) => {
         if (!pass?.length || pass.length < 5) {
           new Error("A senha tem que ter no minimo 5 caracteres");
-          return false
+          return false;
         }
       },
     },
@@ -17,4 +17,10 @@ const UserSchema = new Schema(
   { timestamps: true }
 );
 
-export const User = models?.User || model('User', UserSchema);
+UserSchema.post("validate", function (user) {
+  const notHashedPassword = user.password;
+  const salt = bcrypt.genSaltSync(10);
+  user.password = bcrypt.hashSync(notHashedPassword, salt);
+});
+
+export const User = models?.User || model("User", UserSchema);
